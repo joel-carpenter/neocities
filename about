@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natterjack</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <!-- The above link directs to a local Neocities file called style.css, which contains the css (style information, such as fonts, colors, etc.) for this website. Linking to the css in a separate file allows style guidelines to be edited in one place while updating across the full website. -->
+    <style>
+    .item1 { grid-area: header; }
+    .item2 { grid-area: menu; }
+    .item3 { grid-area: main; }
+    .item4 { grid-area: footer; }
+    .grid-container {
+      display: grid;
+      grid-template:
+        'header header header header header'
+        'menu main main main main'
+        'footer footer footer footer footer';
+      grid-gap: 45px;
+      padding: 20px
+    }
+    </style>
+    <!-- The above grid configuration, contained within the <style> element, dictates the layout of the webpage. The grid has three rows, divided into five columns. The header and footer take up the entirety of their rows, while the middle row is divided between the sidebar, which takes up 1/5 of the space, and the main page content, which takes up the remaining 4/5. Each of these four content items is assigned an identifier (item1, item2, etc.) which will be called within the body of the webpage in order to actually create and display the webpage's content. Pretty nifty! -->
+    <script src="https://unpkg.com/jquery"></script>
+    <!-- The above script pulls from an external jquery library, allowing the below script to work properly. Jquery is not the most efficient way to implement Javascript these days, but it works in a pinch. -->
+    <script> 
+      $(document).ready(function(){
+        $("#item2").load("/html/item2.txt");
+      });
+    </script>
+    <!-- The above script calls a local txt file called 'item2' which contains the html for the sidebar of the webpage. The txt file is nested within a folder named html; the load command tells the script how to navigate to the correct folder and retrieve the txt file. The actual prompt to display the sidebar is below, but having this script in the head section ensures that it will run properly when called for. This also allows the sidebar content to be edited in a single file and updated consistently wherever this script is used across the website. -->
+  </head>
+  <body>
+  <div class="grid-container">
+      <div class="item1">
+        <h1>Joel Carpenter</h1>
+        <h3>Librarian and metadata enthusiast.</h3>
+      </div>
+      <!-- Here we have our first content item, the header. As assigned above under <style>, it is tied to the identifier 'item1', telling the webpage where to display it and how much space to allot. The <h1> and <h3> elements nested within the <div> element determine the actual content that will be displayed in that space. -->
+      <div id="item2" class="item2"></div>
+      <!-- The above div id prompts the webpage to load and display the sidebar. There is no content nested within the <div> element, since the content will be pulled from a separate file. -->
+      <div class="item3">
+        <h2>About Me</h2>
+        <p>I'm a librarian with a background in information literacy instruction, metadata, and database design/management. Many of my projects combine one or more of these themes: Nox Core, for example, is an archival metadata project aimed toward the ultimate goal of a functioning database where people can record information about their personal video game consoles.
+        <p>Before I decided to go into librarianship, I considered pursuing a master's degree in computer science! I have kept up coding as a hobby while pursuing my MLIS degree, and am currently working on archiving more of my code here and on my <a href=https://github.com/joel-carpenter>GitHub</a>.</p>
+        <hr>
+        <h2>About This Site</h2>
+        <p>This website serves as a hub for my projects, as well as a sandbox for me to experiment with HTML, CSS, and JavaScript.</p>
+        <p>Currently the layout is geared toward function and easy editing, but as I optimize the code behind the scenes, I plan to incorporate more features and visuals, and configure a mobile-friendly layout.</p>
+        <hr>
+        <h2>What's a Natterjack?</h2>
+        <p>The natterjack toad, also known by its binomial name of <i>Epidalea calamita</i>, is a nocturnal toad native to Western Europe! They are known for the distinctive yellow stripe down their back, as well as their short hind legs, which give them a distinctive running gait rather than the traditional hop of most frogs and toads.
+        <hr>
+        <h2>Sure, but why is your website named after a toad?</h2>
+        <p>I mean, have you seen these little guys? I think this picture speaks for itself:</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/EpidaleaCalamitaYoung.JPG/1920px-EpidaleaCalamitaYoung.JPG" width="30%" alt="img" />
+        <!-- The above code pulls a photo from Wikimedia Commons and displays it on the webpage. The width attribute tells it to display at 30% of the full size, since the original image is quite large. -->
+        <p><i>Image source: Piet Spaans. Used under a <a href=https://creativecommons.org/licenses/by-sa/2.5/>CC BY-SA 2.5 license</a>.</i></p>
+        <p>Still not convinced? Perhaps a video will convey the natterjack's beauty and elegance more effectively:</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/J4FXMubrFtc?si=LEjUEGOQQrZRipFi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <!-- The above code nested within <iframe> embeds a YouTube video into the webpage. You can get the code you need to do this yourself by copying the embed link from YouTube under the sharing options. The width and height attributes determine the size of the video as it will be displayed on the website; you may need to play around with this to get it to look the way you want. If you don't want to mess around with pixel sizing, you can set a percentage instead, as with the above photo. -->
+      </div>
+      <div class="item4">
+        <hr>
+        <h3>Contact:</h3>
+        <p>joelcarpenter.lis@proton.me<p>
+      </div>
+    </div>
+  </body>
+</html>
