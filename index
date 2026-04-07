@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natterjack</title>
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <!-- The above link directs to a local Neocities file called style.css, which contains the css (style information, such as fonts, colors, etc.) for this website. Linking to the css in a separate file allows style guidelines to be edited in one place while updating across the full website. -->
     <style>
     .item1 { grid-area: header; }
     .item2 { grid-area: menu; }
@@ -21,12 +22,15 @@
       padding: 20px;
     }
     </style>
+    <!-- The above grid configuration, contained within the <style> element, dictates the layout of the webpage. The grid has three rows, divided into five columns. The header and footer take up the entirety of their rows, while the middle row is divided between the sidebar, which takes up 1/5 of the space, the main page content, which takes up 3/5, and a photo, which takes up the remaining 1/5. Each of these five content items is assigned an identifier (item1, item2, etc.) which will be called within the body of the webpage in order to actually create and display the webpage's content. Pretty nifty! -->
     <script src="https://unpkg.com/jquery"></script>
+    <!-- The above script pulls from an external jquery library, allowing the below script to work properly. Jquery is not the most efficient way to implement Javascript these days, but it works in a pinch. -->
     <script> 
       $(document).ready(function(){
         $("#item2").load("/html/item2.txt");
       });
     </script>
+    <!-- The above script calls a local txt file called 'item2' which contains the html for the sidebar of the webpage. The txt file is nested within a folder named html; the load command tells the script how to navigate to the correct folder and retrieve the txt file. The actual prompt to display the sidebar is below, but having this script in the <head> section ensures that it will run properly when called for. This also allows the sidebar content to be edited in a single file and updated consistently wherever this script is used across the website. -->
   </head>
   <body>
   <div class="grid-container">
@@ -34,15 +38,19 @@
         <h1>Joel Carpenter</h1>
         <h3>Librarian and metadata enthusiast.</h3>
       </div>
+      <!-- Here we have our first content item, the header. As assigned above under <style>, it is tied to the identifier 'item1', telling the webpage where to display it and how much space to allot. The <h1> and <h3> elements nested within the <div> element determine the actual content that will be displayed in that space. -->
       <div id="item2" class="item2"></div>
+      <!-- The above div id prompts the webpage to load and display the sidebar. There is no content nested within the <div> element, since the content will be pulled from a separate file. -->
       <div class="item3">
         <h2>Welcome! Check out the sidebar on the left to explore my work experience and projects.</h2>
         <p>I'm a librarian with a passion for metadata, data management, and coding. I have experience in SQL, as well as metadata encoding schemas such as EAD, CDWA Lite, Dublin Core, and VRA Core. I also do HTML and CSS on the side!</p>
         <p>This website is hand-coded! The content and layout are currently under development, with new things coming soon. The main project hosted currently is Nox Core, a metadata schema / application profile for video game consoles.</p>
+        <p>Interested in learning how the code for this website works? Right click and select 'View Page Source' to see all of the code, along with comments on the Home and About pages which explain the structure and components. Comments within the code are notated with an exclamation point and two dashes, and should display in a different color to make them easier to see!</p>
       </div>
       <div class="item4">
         <img src="https://natterjack.neocities.org/jcarpenter_homepagephoto.jpg" width="100%" alt="img" />
       </div>
+      <!-- The above code pulls a locally uploaded image and displays it on the webpage. The width attribute tells it to display at 100%, though in practice it will be smaller than that due to the space allotted by the grid layout. -->
       <div class="item5">
         <hr>
         <h3>Contact:</h3>
