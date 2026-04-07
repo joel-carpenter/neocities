@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nox Core</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+    .item1 { grid-area: header; }
+    .item2 { grid-area: menu; }
+    .item3 {grid-area: main; }
+    .item4 { grid-area: footer; }
+    .grid-container {
+      display: grid;
+      grid-template:
+        'header header header header header'
+        'menu main main main main'
+        'footer footer footer footer footer';
+      grid-gap: 45px;
+      padding: 20px;
+    }
+    </style>
+    <script src="https://unpkg.com/jquery"></script>
+    <script> 
+      $(document).ready(function(){
+        $("#item2").load("/html/item2.txt");
+      });
+    </script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="item1">
+        <h1>Joel Carpenter</h1>
+        <h3>Librarian and metadata enthusiast.</h3>
+      </div>
+      <div id="item2" class="item2"></div>
+      <div class="item3">
+        <h1>Nox Core</h1>
+        <h2>A metadata application profile for the archival description of video game consoles</h2>
+        <p>Nox Core was born from the desire to develop a tailored metadata system that would allow video game console collectors to record effective, structured metadata about their collections. Incorporating semantic and syntactic elements from EAD and CDWA Lite, Nox Core seeks to marry the strengths of archival and museum metadata standards to form a lightweight, modular system that can be adapted to the needs of a given collector or repository.</p>
+        <p>This project is currently in its second major iteration of development. A public dev log is planned to document revisions and changes.</p>
+        <p>Nox Core is free to use and adapt under a <a href=https://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA 4.0</a> license.</p>
+        <hr>
+        <h2>Resources</h2>
+        <p>User guide (currently in development)</p>
+        <p><a href=noxcore-element-specification>Element specification</a></p>
+        <p><a href=noxcore-xml-schema>XML schema</a></p>
+        <p><a href=noxcore-example-record-01>Example XML records</a></p>
+      </div>
+      <div class="item4">
+        <hr>
+        <h3>Contact:</h3>
+        <p>joelcarpenter.lis@proton.me<p>
+      </div>
+    </div>
+  </body>
+</html>
